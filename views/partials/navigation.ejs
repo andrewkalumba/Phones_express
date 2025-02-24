@@ -1,0 +1,28 @@
+<nav class="nav_menu">
+    <% if(locals.bodyClass) { %>
+         <% if(bodyClass === "home") { %>
+             <a href="/" class="active">Home</a>
+         <% } else { %>
+             <a href="/">Home</a>
+         <% } %>
+           
+         <% if (bodyClass === "iphone") { %>
+             <a href="/iphone" class="active">Iphone</a>
+         <% } else { %>
+             <a href="/iphone">Iphone</a>
+         <% } %>
+             
+         <%  if (bodyClass === "samsung") { %>
+             <a href="/samsung" class="active">Samsung</a>
+         <% }  else { %>
+             <a href="/samsung">Samsung</a>
+         <% } %>
+         
+         <% if (bodyClass === "nokia") { %>
+             <a href="/nokia" class="active">Nokia</a>
+         <% }else { %>
+             <a href="/nokia">Nokia</a>
+         <% } %>
+   <% } %> 
+       
+ </nav>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= phone.name %> Details</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <%- include("../partials/head.ejs")  %>
+</head>
+<body class="phone_body">
+    <container class="animal_container">
+    <img class="image" src="<%= phone.image %>" alt="<%= phone.name %>">
+    <h1 class="animal_name"><%= phone.name %></h1>
+    <div class="information">
+    <p><strong>Type:</strong> <%= phone.type %></p>
+    <p><strong>Size:</strong> <%= phone.size %> cm</p>
+    <p><strong>Weight:</strong> <%= phone.weight %> kg</p>
+    <p><strong>Color:</strong> <%= phone.color %> years</p>
+    <p><strong>Capacity:</strong> <%= phone.capacity %></p>
+    <p><strong>Price:</strong> <%= phone.price %></p>
+    <p><strong>Capacity:</strong> <%= phone.capacity %></p>
+    <p><strong>Intelligence:</strong> <%= phone.intelligence %></p>
+    <p><strong>Description:</strong> <%= phone.description %></p>
+    <p><strong>Reviews:</strong> <%= phone.reviews %></p>
+</div>
+<div class="button">
+    <a class="back_button" href="/">Home</a>
+    <a class="back_button" href="/iphone">Iphone</a>
+    <a class="back_button" href="/samsung">Samsung</a>
+    <a class="back_button" href="/nokia">Nokia</a>
+</div>
+</container>
+
+</body>
+</html>
