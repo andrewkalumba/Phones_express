@@ -1,31 +1,27 @@
 import express from "express";
-import {nokia} from "../data/phone.js";
+import { nokia, homeContent } from "../data/phone.js";
 
 const nokiaRouter = express.Router();
 
-nokiaRouter.get("/",(req,res) => {
-   res.render("pages/home",{
-      phones : nokia,
-      bodyClass : "nokia"
+nokiaRouter.get("/", (req, res) => {
+    let selectedPhone = null;
+   res.render("pages/home", {
+    phones: nokia.filter(phone => phone.type === 'nokia'),
+    content: homeContent,
+      bodyClass: "nokia",
+      selectedPhone
    })
- })
+});
 
 nokiaRouter.get('/phone/:name', (req, res) => {
-    const phoneName = req.params.name; //access route parameters
-        let phone;
-    
-        for (let i = 0; i < nokia.length; i++) {
-            if (nokia[i].name === phoneName) {
-                phone = nokia[i];
-                break; 
-            }
-        }
+    const phoneName = req.params.name;
+    const phone = nokia.find(p => p.name === phoneName); // Find the phone
 
     if (phone) {
-        res.render('pages/phone.ejs', {phone});
+        res.render('pages/phone.ejs', { phone, bodyClass:'nokia'});
     } else {
         res.status(404).send('Phone not found');
     }
 });
 
-export default nokiaRouter
+export default nokiaRouter;

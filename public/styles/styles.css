@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 html {
@@ -11,7 +12,7 @@ body {
     margin: 0;
     min-height: 100vh;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
 }
 
 body.home {
@@ -39,42 +40,35 @@ body.nokia {
 }
 
 .header {
+    background-color: #0A100D;
     display: flex;
     justify-content: center;
+    border-bottom: 1px solid #e9b118;
+}
+
+.logoDiv {
+    margin-left: -41%;
+    padding: 5px;
+    width: 25%;
+    height: auto; 
 }
 
 .logo {
-    margin: 0;
-    padding: 12px;
-    width: auto;
-    height: 100%;
+    border-radius: 40px;
 }
 
-.heading {
-    margin-left: 0;
-}
-
-.title {
-    margin: 16px;
-    padding: 16px;
-    margin-bottom: 0;
-    padding-bottom: 0;
-    font-size: 2rem;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: #fff;
-    text-align: center;
-    text-transform: uppercase;
+.page_title {
+    color: #e9b118;
 }
 
 .nav_menu {
+    background-color: #0A100D;
     display: flex;
     justify-content: space-around;
-    margin: 8px;
-    padding: 24px;
+    padding: 16px;
 }
 
 .nav_menu a {
-    margin: 8px;
     text-decoration: none;
     font-size: 1.4rem;
     color: #e9b118;
@@ -99,28 +93,38 @@ body.nokia {
 }
 
 .sidebar {
-    background-color: #4F5165;
-    flex: 0 0 25%;
+    background-image: url("/images/phonePic1.jpg");
+    background-size: cover;
+    flex: 0 0 30%;
     color: white;
+}
 
+.phone {
+    color: #f1f1f1;
+    text-decoration: none;
 }
 
 .main_content {
-    flex: 0 0 75%;
-    flex: 0 0 75%;
+    flex: 0 0 70%;
     color: #fff;
 }
 
 h2 {
     text-align: center;
+    border-bottom: 1px solid #e9b118;
+    padding: 10px 0 20px 0;
+}
+
+.sidebar ul {
+    padding-right: 40px;
 }
 
 .sidebar ul li {
-    padding: 10px;
+    padding: 16px;
     margin: 5px;
-    width: 150px;
     list-style-type: none;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.25);
 }
 
 .animal {
@@ -137,56 +141,22 @@ h2 {
     text-decoration: underline;
 }
 
-.details {
-    text-indent: 30px;
-    font-size: 16px;
-}
-
-/*animal.ejs css*/
-.animal_body {
+.main_info {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 16px;
+    margin: 40px;
     text-align: center;
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background-image: url("/images/home_bg.jpg");
-    background-size: cover;
-    background-position: center;
+    border-radius: 20px;
 }
 
-.image {
-    height: auto;
-    width: 20%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 50px;
-    margin-bottom: 0;
-    padding: 10px;
-}
-
-.animal_name {
-    color: #fff;
-    margin: 3px;
-}
-
-p {
-    color: #fff;
+.info {
     font-size: 1.2rem;
-    margin: 10px;
 }
 
-.animal_container {
-    background-color: #7d9180;
-    display: grid;
-    justify-items: center;
-    align-items: center;
-    border-radius: 16px;
-    position: absolute;
-    left: 50%;
-    top: 20px;
-    transform: translateX(-50%);
-    width: 85%;
+img {
+    width: 30%;
+    height: auto;
+    border-radius: 30px;
 }
 
 .back_button {
@@ -208,17 +178,13 @@ p {
 }
 
 .footer {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas:
-        "logo contact social"
-        "copyright copyright copyright";
-    padding: 24px;
-    gap: 36px;
-    align-items: center;
-    text-align: center; 
-    color: whitesmoke;  
-    background-color: #433f33;
+    display: flex;
+    padding: 16px;
+    gap: 16px;
+    text-align: center;
+    color: #e9b118;
+    ;
+    background-color: #0A100D;
 }
 
 .footer_social-media a {
@@ -231,7 +197,7 @@ p {
 
 .footer-logo h2:hover {
     background-color: #4F5165;
-    color: wheat; 
+    color: wheat;
 }
 
 .footer-contact h4 {
@@ -239,7 +205,7 @@ p {
 }
 
 .footer-logo ul {
-    display:flex;
+    display: flex;
     flex-direction: column
 }
 
@@ -268,16 +234,16 @@ p {
 }
 
 .facts ul {
-    display:flex;
+    display: flex;
     flex-direction: column
 }
 
 .facts ul a {
     color: whitesmoke;
     font-size: 1rem;
-    font-style: normal; 
-    font-family: Verdana, Geneva, Tahoma, sans-serif; 
-    padding: 7px; 
+    font-style: normal;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 7px;
     text-decoration: none;
 }
 
@@ -286,18 +252,28 @@ p {
     color: wheat;
 }
 
-@media screen and (max-width : 1000px) {
-    body {
-        background-color: #433f33;
-    }
+.video-background {
+    position: fixed;
+    /* Keep it fixed in the background */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    /* Send it to the back */
+    overflow: hidden;
+}
 
-    body.home,
-    body.mammals,
-    body.birds,
-    body.reptiles {
-        background-image: none;
-    }
-
+.video-background video {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Center the video */
 }
 
 @media screen and (max-width : 768px) {
@@ -315,30 +291,15 @@ p {
     }
 
     .main_content {
-       margin: 8px;
-       margin: 8px;
+        margin: 8px;
+        margin: 8px;
     }
 
-}
-
-@media screen and (max-width:742px) {
-    .animal_body {
-        background-image: none;
-    }
-
-    .image {
-        height: auto;
-        width: 50%;
-    }
-  
-    .animal {
-        font-size: 16px;
-    }
 }
 
 @media screen and (max-width:568px) {
     .animal_container {
-        display: inline-block; 
+        display: inline-block;
     }
 
     .container {
@@ -356,10 +317,10 @@ p {
     }
 
     .sidebar {
-      background-color: #0C1821;
+        background-color: #0C1821;
     }
 
     .footer {
-        display:block;
+        display: block;
     }
 }

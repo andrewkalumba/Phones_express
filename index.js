@@ -2,49 +2,39 @@ import express from 'express';
 import iphoneRouter from './routes/iphoneRouter.js';
 import samsungRouter from './routes/samsungRouter.js';
 import nokiaRouter from './routes/nokiaRouter.js';
-import {allPhones} from './data/phone.js';
-import * as dotenv from "dotenv";
-import * as path from "path";
+import { allPhones, homeContent } from './data/phone.js';
+import * as dotenv from 'dotenv';
+import * as path from 'path';
 
-//npm - node package manager
 dotenv.config();
-const PORT = process.env.PORT; //looks for port in env(hidden files for security)
+const PORT = process.env.PORT; // Ensure PORT is set in your .env file
 
-const app = express ();
+const app = express();
 const __dirname = path.resolve();
-app.set("views",path.join(__dirname,"views"));
-app.use(express.static(path.join(__dirname,"public")));
-app.set("view engine","ejs");
+app.set('views', path.join(__dirname, 'views'));
+app.use(express.static(path.join(__dirname, 'public')));
+app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
-    res.render("pages/home",{
-        phones : allPhones, //display all animals in sidebar
-        bodyClass : "home"
-    })                   
-});
+    const phoneName = req.query.phone;
+    let selectedPhone = null;
 
-app.get('/phone/:name', (req, res) => {
-    const phoneName = req.params.name; //access route parameters
-        let phone;
-    
-    for (let i = 0; i < allPhones.length; i++) {
-        if (allPhones[i].name === phoneName) {
-            phone = allPhones[i];
-            break; 
-        }
+    if (phoneName) {
+        selectedPhone = allPhones.find(phone => phone.name.toLowerCase() === phoneName.toLowerCase());
     }
 
-    if (phone) {
-        res.render('pages/phone.ejs', {phone});
-    } else {
-        res.status(404).send('Phone not found');
-    }
+    res.render('pages/home', {
+        phones: allPhones,
+        content: homeContent,
+        bodyClass: 'home',
+        selectedPhone
+    });
 });
 
-app.use("/iphone",iphoneRouter);
-app.use("/samsung",samsungRouter);
-app.use("/nokia",nokiaRouter);
+app.use('/iphone', iphoneRouter);
+app.use('/samsung', samsungRouter);
+app.use('/nokia', nokiaRouter);
 
 app.listen(PORT, () => {
-    console.log(`Listening on PORT : ${PORT}`);
+    console.log(`Listening on PORT: ${PORT}`);
 });

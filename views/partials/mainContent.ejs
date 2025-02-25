@@ -1,6 +1,20 @@
 <div class="main_content">
-        <div class="content">
-            <h3><%= subHeading  %></h3>
-            <p class="details"><%= maincontent  %></p>
-        </div>
+    <div class="main_info">
+        <% if (selectedPhone) { %>
+            <h2><%= selectedPhone.name %> Details</h2>
+            <img src="<%= selectedPhone.image %>" alt="<%= selectedPhone.name %>">
+            <p><strong>Type:</strong> <%= selectedPhone.type %></p>
+            <p><strong>Size:</strong> <%= selectedPhone.size %> cm</p>
+            <p><strong>Weight:</strong> <%= selectedPhone.weight %> kg</p>
+            <p><strong>Color:</strong> <%= selectedPhone.color %></p>
+            <p><strong>Capacity:</strong> <%= selectedPhone.capacity %></p>
+            <p><strong>Price:</strong> <%= selectedPhone.price %></p>
+            <p><strong>Description:</strong> <%= selectedPhone.description %></p>
+            <p><strong>Reviews:</strong> <%= selectedPhone.reviews %></p>
+        <% } else { %>
+            <% content.forEach(content => { %>
+                <p class="info"><%= content.maincontent %></p>
+            <% }); %>
+        <% } %>
+    </div>
 </div>

@@ -1,12 +1,13 @@
 <div class="sidebar">
-    <h2>Phone Names</h2>
+    <h2>Available Phones</h2>
     <ul>
-        <% phones.forEach(phone=> { %>
+        <% phones.forEach(phone => { %>
             <li>
-                <a class="phone" href="/phone/<%= phone.name %>">
+                <a class="phone" href="/?phone=<%= encodeURIComponent(phone.name) %>">
                     <%= phone.name %>
                 </a>
             </li>
         <% }); %>
     </ul>
 </div>
+

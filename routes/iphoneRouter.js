@@ -1,30 +1,27 @@
-import express from "express";
-import {iphone} from "../data/phone.js";
+import express from 'express';
+import { iphone, homeContent } from '../data/phone.js';
 
 const iphoneRouter = express.Router();
 
-iphoneRouter.get("/",(req,res) => {
-   res.render("pages/home",{
-      phones : iphone,
-      bodyClass : "iphone"
-   })
- })
+iphoneRouter.get('/', (req, res) => {
+    let selectedPhone = null;
+    res.render('pages/home', {
+        phones: iphone.filter(phone => phone.type === 'iphone'),
+        content: homeContent,
+        bodyClass: 'iphone',
+        selectedPhone,
+    });
+
+});
 
 iphoneRouter.get('/phone/:name', (req, res) => {
-    const phoneName = req.params.name; //access route parameters
-        let phone;
-    
-        for (let i = 0; i < iphone.length; i++) {
-            if (iphone[i].name === phoneName) {
-                phone = iphone[i];
-                break; 
-            }
-        }
+    const phoneName = req.params.name;
+    const phone = iphone.find(p => p.name.toLowerCase() === phoneName.toLowerCase());
 
     if (phone) {
-        res.render('pages/phone.ejs', {phone});
+        res.render('pages/phone', { phone, bodyClass:'iphone' });
     } else {
-        res.status(404).send('Animal not found');
+        res.status(404).send('Phone not found');
     }
 });
 
