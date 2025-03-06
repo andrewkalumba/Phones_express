@@ -3,7 +3,7 @@
     <ul>
         <% phones.forEach(phone => { %>
             <li>
-                <a class="phone" href="/?phone=<%= encodeURIComponent(phone.name) %>">
+                <a class="phone" href="/<%= phone.type %>/phone/<%= encodeURIComponent(phone.name) %>">
                     <%= phone.name %>
                 </a>
             </li>
