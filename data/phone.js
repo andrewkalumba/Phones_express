@@ -1,7 +1,6 @@
 function Phone(type, name, size, weight, color, capacity, price, intelligence, description, reviews, image) {
     this.type = type;
     this.name = name;
-    //this.slug = name.trim().toLowerCase().replace(/\s+/g,'-')
     this.size = size;
     this.weight = weight
     this.color = color;

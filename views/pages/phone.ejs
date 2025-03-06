@@ -29,15 +29,11 @@
             <p><strong>Price:</strong> <%= phone.price %></p>
             <p><strong>Description:</strong> <%= phone.description %></p>
             <p><strong>Reviews:</strong> <%= phone.reviews %></p>
-        <% } else { %>
-            <% content.forEach(contentItem => { %>
-                <p class="info"><%= contentItem.maincontent %></p>
-            <% }); %>
         <% } %>
     </div>
 </div> 
 
-<%- include("../partials/footer.ejs")  %>
+   <%- include("../partials/footer.ejs")  %>
 
 </body>
 </html> 
