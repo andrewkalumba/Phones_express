@@ -47,9 +47,21 @@ let homeContent = [
     new Content('Why wait? Our knowledgeable technicians are ready to help you in no time. We do most repairs while you wait, so you can quickly get back to your everyday life without any hassle. In addition, we are a green partner in the mobile world, and with our sustainable thinking we contribute to a more environmentally friendly future. Trust Mobile Phone Hub for safe and smooth mobile ownership. Come in today and experience the difference. We are always close to you!')
 ]
 
+let iphoneContent = [
+    new Content('The iPhone is a line of smartphones developed and marketed by Apple that run iOS, the company`s own mobile operating system. The first-generation iPhone was announced by then Apple CEO Steve Jobs on January 9, 2007, at Macworld 2007, and launched later that year. Since then, Apple has annually released new iPhone models and iOS versions; the most recent models being the iPhone 16 and 16 Plus, alongside the higher-end iPhone 16 Pro and 16 Pro Max, and the lower-end iPhone 16e. As of January 1, 2024, more than 2.3 billion iPhones have been sold, making Apple the largest vendor of mobile phones in 2023.')
+]
+
+let samsungContent = [
+    new Content('Samsung Galaxy (Korean: 삼성 갤럭시; stylized as SΛMSUNG Galaxy since 2015 (except Japan where it omitted the Samsung branding up until 2023),[2] previously stylized as Samsung GALAXY; abbreviated as SG) is a series of computing, Android mobile computing and wearable devices that are designed, manufactured and marketed by Samsung Electronics since 29 June 2009. The product line includes the Samsung Galaxy S series of high-end phones, Galaxy Z series of high-end foldables, Galaxy A series, Galaxy F series and Galaxy M series of mid-range phones, the Galaxy Book of laptops, the Samsung Galaxy Tab series, the Samsung Galaxy Watch series, the Galaxy Buds series and the Galaxy Fit, and the now historical Galaxy Note series of pioneering phablets. Samsung Galaxy devices with a user interface called One UI (with previous versions being known as Samsung Experience and TouchWiz). However, the Galaxy TabPro S is the first Galaxy-branded Windows 10 device that was announced in CES 2016.')
+]
+
+let nokiaContent = [
+    new Content('Nokia Corporation is a Finnish multinational telecommunications, information technology, and consumer electronics corporation, originally established as a pulp mill in 1865. Nokia`s main headquarters are in Espoo, Finland, in the Helsinki metropolitan area, but the company`s actual roots are in the Tampere region of Pirkanmaa. In 2020, Nokia employed approximately 92,000 people[7] across over 100 countries, did business in more than 130 countries, and reported annual revenues of around €23 billion. Nokia is a public limited company listed on the Nasdaq Helsinki and New York Stock Exchange. It was the world`s 415th-largest company measured by 2016 revenues, according to the Fortune Global 500, having peaked at 85th place in 2009. It is a component of the Euro Stoxx 50 stock market index. The company has operated in various industries over the past 150 years. It was founded as a pulp mill and had long been associated with rubber and cables, but since the 1990s has focused on large-scale telecommunications infrastructure, technology development, and licensing. Nokia made significant contributions to the mobile telephony industry, assisting in the development of the GSM, 3G, and LTE standards.')
+]
+
 const allPhones = [...iphone, ...samsung, ...nokia];
 
-export { allPhones, iphone, samsung, nokia, homeContent};
+export { allPhones, iphone, samsung, nokia, homeContent, iphoneContent, samsungContent, nokiaContent};
 
 
 

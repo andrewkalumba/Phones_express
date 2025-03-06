@@ -1,6 +1,6 @@
 
 import express from "express";
-import {samsung, homeContent} from "../data/phone.js";
+import {samsung, samsungContent} from "../data/phone.js";
 
 const samsungRouter = express.Router();
 
@@ -8,7 +8,7 @@ samsungRouter.get("/",(req,res) => {
     let selectedPhone = null;
    res.render("pages/home",{
      phones : samsung.filter(phone => phone.type === 'samsung'),
-     content : homeContent,
+     content : samsungContent,
     bodyClass : "samsung",
     selectedPhone
    })

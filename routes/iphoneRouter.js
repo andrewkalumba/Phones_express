@@ -1,12 +1,12 @@
 import express from 'express';
-import { iphone, homeContent } from '../data/phone.js';
+import {iphone, iphoneContent} from '../data/phone.js';
 
 const iphoneRouter = express.Router();
 
 iphoneRouter.get('/', (req, res) => {
     res.render('pages/home', {
         phones: iphone.filter(phone => phone.type === 'iphone'),
-        content: homeContent,
+        content: iphoneContent,
         bodyClass: 'iphone',
         selectedPhone: null,
     });

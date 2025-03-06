@@ -1,5 +1,5 @@
 import express from "express";
-import { nokia, homeContent } from "../data/phone.js";
+import { nokia, nokiaContent} from "../data/phone.js";
 
 const nokiaRouter = express.Router();
 
@@ -7,7 +7,7 @@ nokiaRouter.get("/", (req, res) => {
     let selectedPhone = null;
    res.render("pages/home", {
     phones: nokia.filter(phone => phone.type === 'nokia'),
-    content: homeContent,
+    content: nokiaContent,
       bodyClass: "nokia",
       selectedPhone
    })
