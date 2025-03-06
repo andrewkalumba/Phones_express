@@ -1,30 +1,9 @@
 <nav class="nav_menu">
-    <% if(locals.bodyClass) { %>
-         <% if(bodyClass === "home") { %>
-             <a href="/" class="active">Home</a>
-         <% } else { %>
-             <a href="/">Home</a>
-         <% } %>
-           
-         <% if (bodyClass === "iphone") { %>
-             <a href="/iphone" class="active">Iphone</a>
-         <% } else { %>
-             <a href="/iphone">Iphone</a>
-         <% } %>
-             
-         <%  if (bodyClass === "samsung") { %>
-             <a href="/samsung" class="active">Samsung</a>
-         <% }  else { %>
-             <a href="/samsung">Samsung</a>
-         <% } %>
-         
-         <% if (bodyClass === "nokia") { %>
-             <a href="/nokia" class="active">Nokia</a>
-         <% }else { %>
-             <a href="/nokia">Nokia</a>
-         <% } %>
-   <% } %> 
-       
- </nav>
+    <a href="/" class="<%= bodyClass === 'home' ? 'active' : '' %>">Home</a>
+    <a href="/iphone" class="<%= bodyClass === 'iphone' ? 'active' : '' %>">iPhone</a>
+    <a href="/samsung" class="<%= bodyClass === 'samsung' ? 'active' : '' %>">Samsung</a>
+    <a href="/nokia" class="<%= bodyClass === 'nokia' ? 'active' : '' %>">Nokia</a>
+</nav>
+
 
  
