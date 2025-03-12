@@ -6,7 +6,7 @@ const nokiaRouter = express.Router();
 nokiaRouter.get("/", (req, res) => {
     let selectedPhone = null;
    res.render("pages/home", {
-    phones: nokia.filter(phone => phone.type === 'nokia'),
+    phones: nokia,
     content: nokiaContent,
       bodyClass: "nokia",
       selectedPhone

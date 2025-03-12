@@ -7,7 +7,7 @@ const samsungRouter = express.Router();
 samsungRouter.get("/",(req,res) => {
     let selectedPhone = null;
    res.render("pages/home",{
-     phones : samsung.filter(phone => phone.type === 'samsung'),
+     phones : samsung,
      content : samsungContent,
     bodyClass : "samsung",
     selectedPhone

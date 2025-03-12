@@ -5,7 +5,7 @@ const iphoneRouter = express.Router();
 
 iphoneRouter.get('/', (req, res) => {
     res.render('pages/home', {
-        phones: iphone.filter(phone => phone.type === 'iphone'),
+        phones: iphone,
         content: iphoneContent,
         bodyClass: 'iphone',
         selectedPhone: null,

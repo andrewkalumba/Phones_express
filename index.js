@@ -16,12 +16,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
-    const phoneName = req.query.phone;
     let selectedPhone = null;
-
-    if (phoneName) {
-        selectedPhone = allPhones.find(phone => phone.name.toLowerCase() === phoneName.toLowerCase());
-    }
 
     res.render('pages/home', {
         phones: allPhones,
